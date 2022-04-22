@@ -8,6 +8,10 @@ import Mouiad.state.BrushTool;
 import Mouiad.state.Canves;
 import Mouiad.state.EraseTool;
 import Mouiad.state.SelectionTool;
+import Mouiad.state.homework.DirectionService;
+import Mouiad.state.homework.EstimateOne;
+import Mouiad.state.homework.EstimateThree;
+import Mouiad.state.homework.Services;
 
 public class Main {
     public static void main(String [] args){
@@ -52,17 +56,24 @@ public class Main {
 //        doc.reset(his.pop());
 //        doc.reset(his.pop());
 //        System.out.println(doc.getContent()+" "+doc.getFontName()+ " "+doc.getFontSize());
-        var canves = new Canves();
-        canves.setCurrentTool(new SelectionTool());
-        canves.mouseDown();
-        canves.mouseUp();
-        canves.setCurrentTool(new BrushTool());
-        canves.mouseDown();
-        canves.mouseUp();
-
-        canves.setCurrentTool(new EraseTool());
-        canves.mouseDown();
-        canves.mouseUp();
+//        var canves = new Canves();
+//        canves.setCurrentTool(new SelectionTool());
+//        canves.mouseDown();
+//        canves.mouseUp();
+//        canves.setCurrentTool(new BrushTool());
+//        canves.mouseDown();
+//        canves.mouseUp();
+//
+//        canves.setCurrentTool(new EraseTool());
+//        canves.mouseDown();
+//        canves.mouseUp();
+        var dirtSevice = new DirectionService();
+        dirtSevice.setService(new EstimateOne());
+        dirtSevice.calculatingTime();
+        dirtSevice.getDirection();
+        dirtSevice.setService(new EstimateThree());
+        dirtSevice.calculatingTime();
+        dirtSevice.getDirection();
     }
 //    public static TaxCalculater getCalculater(){
 //        return new TaxCalculater2019();
