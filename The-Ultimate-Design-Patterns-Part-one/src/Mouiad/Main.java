@@ -4,6 +4,10 @@ import Mouiad.memento.DocHistory;
 import Mouiad.memento.Document;
 import Mouiad.memento.Editor;
 import Mouiad.memento.History;
+import Mouiad.state.BrushTool;
+import Mouiad.state.Canves;
+import Mouiad.state.EraseTool;
+import Mouiad.state.SelectionTool;
 
 public class Main {
     public static void main(String [] args){
@@ -32,23 +36,33 @@ public class Main {
 //    editor.restore(history.pop());
 //    editor.restore(history.pop());
 //    System.out.println(editor.getContent());
-        var doc = new Document();
-        var his = new DocHistory();
-        doc.setContent("Word 2022");
-        doc.setFontName("Time New Roman");
-        doc.setFontSize(16);
-        his.push(doc.createState());
-        doc.setContent("Word 2021");
-        doc.setFontName("Simple");
-        doc.setFontSize(14);
-        his.push(doc.createState());
-        doc.setContent("Word 2019");
-        doc.setFontName("Console");
-        doc.setFontSize(16);
+//        var doc = new Document();
+//        var his = new DocHistory();
+//        doc.setContent("Word 2022");
+//        doc.setFontName("Time New Roman");
+//        doc.setFontSize(16);
+//        his.push(doc.createState());
+//        doc.setContent("Word 2021");
+//        doc.setFontName("Simple");
+//        doc.setFontSize(14);
+//        his.push(doc.createState());
+//        doc.setContent("Word 2019");
+//        doc.setFontName("Console");
+//        doc.setFontSize(16);
 //        doc.reset(his.pop());
 //        doc.reset(his.pop());
-        System.out.println(doc.getContent()+" "+doc.getFontName()+ " "+doc.getFontSize());
+//        System.out.println(doc.getContent()+" "+doc.getFontName()+ " "+doc.getFontSize());
+        var canves = new Canves();
+        canves.setCurrentTool(new SelectionTool());
+        canves.mouseDown();
+        canves.mouseUp();
+        canves.setCurrentTool(new BrushTool());
+        canves.mouseDown();
+        canves.mouseUp();
 
+        canves.setCurrentTool(new EraseTool());
+        canves.mouseDown();
+        canves.mouseUp();
     }
 //    public static TaxCalculater getCalculater(){
 //        return new TaxCalculater2019();
