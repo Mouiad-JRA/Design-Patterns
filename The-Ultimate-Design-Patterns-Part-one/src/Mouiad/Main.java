@@ -2,6 +2,8 @@ package Mouiad;
 
 import Mouiad.iterator.BrowseHistory;
 import Mouiad.iterator.Iterator;
+import Mouiad.iterator.Product;
+import Mouiad.iterator.ProductCollection;
 import Mouiad.memento.DocHistory;
 import Mouiad.memento.Document;
 import Mouiad.memento.Editor;
@@ -76,15 +78,25 @@ public class Main {
 //        dirtSevice.setService(new EstimateThree());
 //        dirtSevice.calculatingTime();
 //        dirtSevice.getDirection();
-        var browseHistory = new BrowseHistory();
-        browseHistory.push("onme.ma");
-        browseHistory.push("onme12.ma");
+//        var browseHistory = new BrowseHistory();
+//        browseHistory.push("onme.ma");
+//        browseHistory.push("onme12.ma");
 
 
-        Iterator iterator = browseHistory.creatIterator();
+//        Iterator iterator = browseHistory.creatIterator();
+        Product productOne = new Product("mobile", 50, 56);
+        Product productTwo = new Product("PC", 150, 100);
+        Product productThree = new Product("Laptop", 200, 80);
+        ProductCollection productCollection = new ProductCollection();
+        productCollection.push(productOne);
+        productCollection.push(productTwo);
+        productCollection.push(productThree);
+
+        var iterator = productCollection.creatIterator();
+        // TODO : print all the product fields
         while (iterator.hasNext()){
-            var url = iterator.current();
-            System.out.println(url);
+            var product = iterator.current();
+            System.out.println(product);
             iterator.next();
         }
     }
