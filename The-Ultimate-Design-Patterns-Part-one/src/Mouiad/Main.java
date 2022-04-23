@@ -1,5 +1,7 @@
 package Mouiad;
 
+import Mouiad.iterator.BrowseHistory;
+import Mouiad.iterator.Iterator;
 import Mouiad.memento.DocHistory;
 import Mouiad.memento.Document;
 import Mouiad.memento.Editor;
@@ -67,13 +69,24 @@ public class Main {
 //        canves.setCurrentTool(new EraseTool());
 //        canves.mouseDown();
 //        canves.mouseUp();
-        var dirtSevice = new DirectionService();
-        dirtSevice.setService(new EstimateOne());
-        dirtSevice.calculatingTime();
-        dirtSevice.getDirection();
-        dirtSevice.setService(new EstimateThree());
-        dirtSevice.calculatingTime();
-        dirtSevice.getDirection();
+//        var dirtSevice = new DirectionService();
+//        dirtSevice.setService(new EstimateOne());
+//        dirtSevice.calculatingTime();
+//        dirtSevice.getDirection();
+//        dirtSevice.setService(new EstimateThree());
+//        dirtSevice.calculatingTime();
+//        dirtSevice.getDirection();
+        var browseHistory = new BrowseHistory();
+        browseHistory.push("onme.ma");
+        browseHistory.push("onme12.ma");
+
+
+        Iterator iterator = browseHistory.creatIterator();
+        while (iterator.hasNext()){
+            var url = iterator.current();
+            System.out.println(url);
+            iterator.next();
+        }
     }
 //    public static TaxCalculater getCalculater(){
 //        return new TaxCalculater2019();
