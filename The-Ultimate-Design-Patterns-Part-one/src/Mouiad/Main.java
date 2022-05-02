@@ -17,6 +17,8 @@ import Mouiad.state.homework.EstimateOne;
 import Mouiad.state.homework.EstimateThree;
 import Mouiad.state.homework.Services;
 import Mouiad.strategy.*;
+import Mouiad.template.TansferMoney;
+import Mouiad.template.Task;
 
 public class Main {
     public static void main(String[] args) {
@@ -103,8 +105,10 @@ public class Main {
 //        var imageStorge = new ImageStorage();
 //        imageStorge.store("a", new JepgCompresser(), new HighFilter());
 
-        var chatEncrypt = new ChatClient();
-        chatEncrypt.send("a", new TypeOneEncrypt());
+//        var chatEncrypt = new ChatClient();
+//        chatEncrypt.send("a", new TypeOneEncrypt());
+        var task = new TansferMoney();
+        task.execute();
     }
 //    public static TaxCalculater getCalculater(){
 //        return new TaxCalculater2019();
