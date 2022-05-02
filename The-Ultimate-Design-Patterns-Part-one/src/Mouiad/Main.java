@@ -16,9 +16,10 @@ import Mouiad.state.homework.DirectionService;
 import Mouiad.state.homework.EstimateOne;
 import Mouiad.state.homework.EstimateThree;
 import Mouiad.state.homework.Services;
+import Mouiad.strategy.*;
 
 public class Main {
-    public static void main(String [] args){
+    public static void main(String[] args) {
 //    var user = new User("Mosh");
 //    user.sayHello();
 //    TaxCalculater calculater = getCalculater();
@@ -84,21 +85,26 @@ public class Main {
 
 
 //        Iterator iterator = browseHistory.creatIterator();
-        Product productOne = new Product("mobile", 50, 56);
-        Product productTwo = new Product("PC", 150, 100);
-        Product productThree = new Product("Laptop", 200, 80);
-        ProductCollection productCollection = new ProductCollection();
-        productCollection.push(productOne);
-        productCollection.push(productTwo);
-        productCollection.push(productThree);
+//        Product productOne = new Product("mobile", 50, 56);
+//        Product productTwo = new Product("PC", 150, 100);
+//        Product productThree = new Product("Laptop", 200, 80);
+//        ProductCollection productCollection = new ProductCollection();
+//        productCollection.push(productOne);
+//        productCollection.push(productTwo);
+//        productCollection.push(productThree);
+//
+//        var iterator = productCollection.creatIterator();
+//        // TODO : print all the product fields
+//        while (iterator.hasNext()){
+//            var product = iterator.current();
+//            System.out.println(product);
+//            iterator.next();
+//        }
+//        var imageStorge = new ImageStorage();
+//        imageStorge.store("a", new JepgCompresser(), new HighFilter());
 
-        var iterator = productCollection.creatIterator();
-        // TODO : print all the product fields
-        while (iterator.hasNext()){
-            var product = iterator.current();
-            System.out.println(product);
-            iterator.next();
-        }
+        var chatEncrypt = new ChatClient();
+        chatEncrypt.send("a", new TypeOneEncrypt());
     }
 //    public static TaxCalculater getCalculater(){
 //        return new TaxCalculater2019();
