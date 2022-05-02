@@ -19,6 +19,7 @@ import Mouiad.state.homework.Services;
 import Mouiad.strategy.*;
 import Mouiad.template.TansferMoney;
 import Mouiad.template.Task;
+import Mouiad.template.homework.FirstWindow;
 
 public class Main {
     public static void main(String[] args) {
@@ -107,8 +108,8 @@ public class Main {
 
 //        var chatEncrypt = new ChatClient();
 //        chatEncrypt.send("a", new TypeOneEncrypt());
-        var task = new TansferMoney();
-        task.execute();
+        var task = new FirstWindow();
+        task.close();
     }
 //    public static TaxCalculater getCalculater(){
 //        return new TaxCalculater2019();
